@@ -1,3 +1,5 @@
+                                             ***Configurator***
+
 El ejecutable solicita la contraseña del usuario SSH al ejecutarse.
 Para cargar un laboratorio se necesitan los archivos de configuracion ISP.txt;R1.txt;R2.txt;R3.txt;DLS1.txt;DLS2.txt;ALS1.txt
 Estos estan ubicados en la carpeta de la instalacion en el directorio Configs
@@ -14,3 +16,7 @@ Habilitar "Modo de desarrollador" y "Permitir el acceso a las URL del archivo"
 Importa el archivo Script_Tampermonkey-CCNx.js en options > utils o en este enlace (chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/options.html#nav=utils)
 Activar el script y recargar la página; El script se ejecutará automáticamente.
 Mantener presionada la tecla "Enter" para activar las terminales.
+
+                                             ***POD-Loader***
+
+Carga los perfiles de los POD a PuTTY y entrega la posibilidad de ejecutarlos para abrir todos los dispositivos del POD a la vez
