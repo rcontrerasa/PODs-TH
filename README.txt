@@ -3,7 +3,7 @@ Para cargar un laboratorio se necesitan los archivos de configuracion ISP.txt;R1
 Estos estan ubicados en la carpeta de la instalacion en el directorio Configs
 Nota: en caso de que un dispositivo no lleve una confiuracion este debe incluir de todas formas el archivo vacio.
 
-                                                              ***Tampermonkey***
+                                             ***Tampermonkey***
 
 Esta extensión es fundamental para ejecutar un script dentro de la página del Access Server, permitiendo la activación de los dispositivos y la correcta carga de configuraciones.
 Iniciar sesión en el Access Server (CCNA o CCNP) y acceder a la webshell del primer puerto. El enlace debería tener el siguiente formato: https://172.16.0.13x/?form=webshell&port=1
