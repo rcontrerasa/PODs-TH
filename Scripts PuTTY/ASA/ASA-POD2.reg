@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\ASA-FIREWALL-P2]
+"HostName"="192.168.0.17"
+"PortNumber"=dword:00000016
+"Protocol"="ssh"
+"Username"="ASA"
+
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\ASA-ROUTER-P2]
+"HostName"="192.168.0.18"
+"PortNumber"=dword:00000016
+"Protocol"="ssh"
+"Username"="ASA"
+
+[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\ASA-SWITCH-P2]
+"HostName"="192.168.0.19"
+"PortNumber"=dword:00000016
+"Protocol"="ssh"
+"Username"="ASA"
+
+
