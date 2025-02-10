@@ -1,0 +1,14 @@
+ena
+conf t
+int g0/0
+no sh
+int g0/1
+no sh
+int s0/0/0
+no sh
+int s0/0/1
+no sh
+int ran g1/0/1-6
+no sh
+int ran f0/1-4
+no sh
