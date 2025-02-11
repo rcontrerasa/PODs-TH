@@ -1,7 +1,7 @@
                                              ***Configurator***
 
 El ejecutable solicita la contraseña del usuario SSH al ejecutarse.
-Para cargar un laboratorio se necesitan los archivos de configuracion ISP.txt;R1.txt;R2.txt;R3.txt;DLS1.txt;DLS2.txt;ALS1.txt
+Para cargar un laboratorio se necesita que los archivos de configuracion  tengan el formato: ISP.txt;R1.txt;R2.txt;R3.txt;DLS1.txt;DLS2.txt;ALS1.txt segun el dispositivo requerido.
 Estos estan ubicados en la carpeta de la instalacion en el directorio Configs
 
                                              ***Tampermonkey***
