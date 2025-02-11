@@ -2,6 +2,7 @@ import time
 import os
 import sys
 import subprocess
+import ctypes
 
 # Verificar si paramiko está instalado, si no, instalarlo automáticamente
 try:
@@ -11,12 +12,32 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "paramiko"])
     import paramiko
 
+def open_configs_folder():
+    """Abre la carpeta 'configs' y espera la confirmación del usuario para continuar."""
+    if os.path.exists(CONFIGS_PATH):
+        print(f"[INFO] Abriendo la carpeta de configuraciones: {CONFIGS_PATH}")
+        subprocess.Popen(f'explorer "{CONFIGS_PATH}"')  # Abre el explorador de archivos en la carpeta configs
+        ctypes.windll.user32.MessageBoxW(0, "Verifique que los archivos de configuración están en la carpeta 'configs'.\nPresione Aceptar para continuar.", "Confirmación", 1)
+    else:
+        ctypes.windll.user32.MessageBoxW(0, f"La carpeta de configuraciones no existe en: {CONFIGS_PATH}", "Error", 0)
+        sys.exit(1)
+
 # Datos de autenticación para los dispositivos
 DEVICE_USER = "CCNP"
 DEVICE_PASSWORD = input("Ingrese Contraseña Para CCNP: ")
 
-# Ruta base de los archivos de configuración (el mismo directorio que el script)
-CONFIGS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs")
+# Ruta base de los archivos de configuración
+if getattr(sys, 'frozen', False):
+    # Si el script es un ejecutable empaquetado con PyInstaller
+    # Busca la carpeta 'configs' en el directorio donde está el ejecutable
+    CONFIGS_PATH = os.path.join(sys._MEIPASS, "configs")
+else:
+    # Si estamos ejecutando el script desde el código fuente
+    CONFIGS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs")
+
+# Si no encuentra los archivos de configuración, buscar en el directorio de instalación del ejecutable
+if not os.path.exists(CONFIGS_PATH):
+    CONFIGS_PATH = os.path.join(os.path.dirname(sys.executable), "configs")
 
 # Diccionario de configuraciones por dispositivo
 DEVICE_CONFIGS = {
@@ -122,6 +143,7 @@ def send_ssh_commands(ip, username, password, commands):
 
 # Función principal para configurar dispositivos
 def main():
+    open_configs_folder()
     if not os.path.exists(CONFIGS_PATH):
         print(f"[ERROR] La carpeta de configuraciones '{CONFIGS_PATH}' no existe.")
         sys.exit(1)
