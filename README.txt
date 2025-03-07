@@ -20,8 +20,9 @@ Mantener presionada la tecla "Enter" para activar las terminales.
 
 Carga los perfiles de los POD a PuTTY y entrega la posibilidad de ejecutarlos para abrir todos los dispositivos del POD a la vez
 
-                                            ***IMPORTANTE***
+                                             ***IMPORTANTE***
+
 Windows Defender detecta los ejecutables de POD Loader y CCNx Configurator como posible virus (Trojan:Win32/Wacatac.B!ml)
 Esto se debe a diversos motivos del codigo fuente que pueden llegar a ser considerados maliciosos como la instalacion de paramiko, subprocess, compilado con pyinstaller, no esta firmado digitalmente y subprocess.
-De todas maneras es codigo abierto y se puede verificar, ademas, se puede ejecutar directamente el archivo .py en caso de cualquier otro inconveniente.
+De todas maneras es codigo abierto y se puede verificar, ademas, se puede ejecutar directamente el archivo .py en caso de cualquier otro inconveniente o los .reg en el caso de POD Loader.
 Para poder ejecutar/descargar el instalador se debe crear la excepcion en el windows defender o la otra opcion poco recomendada es desactivarlo temporalmente.
